@@ -8,5 +8,7 @@ import java.util.List;
 
 @Repository
 public interface GroupBorrowersRepository extends CrudRepository<GroupBorrower, Long> {
-   List<GroupBorrower> findAllByLastName();
+    @Override
+    Iterable<GroupBorrower> findAll();
+    //   List<GroupBorrower> findAllByLastName();
 }

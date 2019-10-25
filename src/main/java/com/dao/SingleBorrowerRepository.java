@@ -8,5 +8,8 @@ import java.util.List;
 
 @Repository
 public interface SingleBorrowerRepository extends CrudRepository<SingleBorrower, Long> {
-    List<SingleBorrower> findAllByLastName();
+
+    @Override
+    Iterable<SingleBorrower> findAll();
+    //    List<SingleBorrower> findAllByLastName();
 }

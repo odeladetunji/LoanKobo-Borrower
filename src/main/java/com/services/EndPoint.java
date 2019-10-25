@@ -23,7 +23,9 @@ public class EndPoint implements BorrowersServiceInterface{
    @Autowired
    GroupBorrowersRepository groupBorrowersRepository;
 
+   //A Bean
    BeanGenerator groupBorrower;
+
 
    public BeanGenerator groupBorrowerBean(GroupBorrower payload){
       groupBorrower.groupBorrower().companyName = payload.companyName;
@@ -74,7 +76,7 @@ public class EndPoint implements BorrowersServiceInterface{
 
    @Override
    public List<SingleBorrower> viewSingleBorrowers(){
-      Iterable<com.entity.SingleBorrower> result = singleBorrowerRepository.findAllByLastName();
+      Iterable<com.entity.SingleBorrower> result = singleBorrowerRepository.findAll();
       if (((List<com.entity.SingleBorrower>) result).isEmpty()) return  new ArrayList<>();
       AbstractFactory entityFactory = ProducerFactory.newEntityFactory();
       SingleBorrower aSingleBorrowwer = entityFactory.getSingleBorrower();
@@ -95,9 +97,10 @@ public class EndPoint implements BorrowersServiceInterface{
       return theResult;
    }
 
+
    @Override
    public List<GroupBorrower> viewGroupBorrowers(){
-      Iterable<com.entity.GroupBorrower> result = groupBorrowersRepository.findAllByLastName();
+      Iterable<com.entity.GroupBorrower> result = groupBorrowersRepository.findAll();
       if (((List<com.entity.GroupBorrower>) result).isEmpty()) return new ArrayList<>();
       AbstractFactory entityFactory = ProducerFactory.newEntityFactory();
       GroupBorrower aGroupBorrower = entityFactory.getGroupBorrower();

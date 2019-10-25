@@ -45,13 +45,13 @@ public class Borrowers {
     @ResponseBody
     @PostMapping(path = "/smsToAllBorrowers")
     public String smsToAllBorrowers(){
-        return "ping successfull";
+        return "Not Available For Now";
     }
 
     @ResponseBody
     @PostMapping(path = "/emailToAllBorrowers")
     public String emailToAllBorrowers(){
-        return "ping successfull";
+        return "Not Available For Now!";
     }
 
     @ResponseBody
